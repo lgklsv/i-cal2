@@ -11,3 +11,7 @@ export const ControlsContainer = styled.div`
   display: flex;
   gap: 1rem;
 `;
+
+export const YearText = styled.span`
+  font-weight: lighter;
+`;

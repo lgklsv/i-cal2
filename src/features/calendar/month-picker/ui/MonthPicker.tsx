@@ -5,7 +5,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppButton } from 'shared/ui';
 import { CalendarSelector } from 'store/selectors/CalendarSelector';
 import { nextMonth, prevMonth } from 'store/reducers/CalendarSlice';
-import { MonthPickerContainer, ControlsContainer } from './MonthPicker.styles';
+import {
+  MonthPickerContainer,
+  ControlsContainer,
+  YearText,
+} from './MonthPicker.styles';
 
 function MonthPicker() {
   const dispatch = useDispatch();
@@ -21,7 +25,10 @@ function MonthPicker() {
 
   return (
     <MonthPickerContainer>
-      <h2>{format(firstDayOfMonth, 'MMMM yyyy')}</h2>
+      <h2>
+        {format(firstDayOfMonth, 'MMMM')}{' '}
+        <YearText>{format(firstDayOfMonth, 'yyyy')}</YearText>
+      </h2>
       <ControlsContainer>
         <AppButton onClick={prevMonthHandler} icon={<IoChevronBackOutline />} />
         <AppButton
