@@ -1,9 +1,10 @@
 import CalLayout from 'pages/layout';
+import { Header } from 'widgets/header';
 
 function Calendar() {
   return (
     <CalLayout>
-      <h1>hi</h1>
+      <Header />
     </CalLayout>
   );
 }
