@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NormalizeStyles } from './normailze.styles';
 
 const StyledButton = styled.button`
   color: white;
@@ -8,7 +9,12 @@ const StyledButton = styled.button`
 `;
 
 function App() {
-  return <StyledButton type="button">cal</StyledButton>;
+  return (
+    <>
+      <NormalizeStyles />
+      <StyledButton type="button">cal</StyledButton>
+    </>
+  );
 }
 
 export default App;
