@@ -1,13 +1,19 @@
-import { useSelector } from 'react-redux';
-import { format, getDay } from 'date-fns';
+import { useDispatch, useSelector } from 'react-redux';
+import { format, getDay, isEqual, isToday } from 'date-fns';
 
 import { CalendarSelector } from 'store/selectors/CalendarSelector';
-import { AppButton } from 'shared/ui';
+import { selectDay } from 'store/reducers/CalendarSlice';
+import { Day } from 'entities/calendar';
 import { DaysContainer } from './Days.styles';
 
 function Days() {
-  const { days } = useSelector(CalendarSelector);
+  const dispatch = useDispatch();
+  const { days, selectedDay } = useSelector(CalendarSelector);
   const daysToSkip = getDay(days[0]);
+
+  const selectDayHandler = (day: Date) => {
+    dispatch(selectDay(day));
+  };
 
   return (
     <DaysContainer>
@@ -19,9 +25,14 @@ function Days() {
         />
       )}
       {days.map((day) => (
-        <AppButton key={day.toString()}>
+        <Day
+          today={isToday(day)}
+          selected={isEqual(day, selectedDay)}
+          onClick={() => selectDayHandler(day)}
+          key={day.toString()}
+        >
           <time dateTime={format(day, 'yyyy-MM-dd')}>{format(day, 'd')}</time>
-        </AppButton>
+        </Day>
       ))}
     </DaysContainer>
   );

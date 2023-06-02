@@ -12,11 +12,11 @@ export const Button = styled.button`
   align-items: center;
   gap: 0.2rem;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: all 0.15s ease;
   outline: #030303;
 
   &:hover {
-    background-color: #eee;
+    background-color: rgb(229 231 235);
   }
 
   svg {

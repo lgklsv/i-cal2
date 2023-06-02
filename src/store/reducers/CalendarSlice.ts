@@ -54,11 +54,15 @@ const CalendarSlice = createSlice({
         end: endOfMonth(firstDayNextMonth),
       });
     },
+
+    selectDay(state, action: PayloadAction<Date>) {
+      state.selectedDay = action.payload;
+    },
   },
 });
 
 const { actions, reducer } = CalendarSlice;
 
-export const { prevMonth, nextMonth } = actions;
+export const { prevMonth, nextMonth, selectDay } = actions;
 
 export default reducer;
