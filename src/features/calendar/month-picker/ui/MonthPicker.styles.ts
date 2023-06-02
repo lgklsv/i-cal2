@@ -5,7 +5,6 @@ export const MonthPickerContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
-  background-color: #f6f6f6;
 `;
 
 export const ControlsContainer = styled.div`

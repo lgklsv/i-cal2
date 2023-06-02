@@ -1,3 +1,3 @@
-import CalLayout from './ui/CalLayout';
+import CalLayout from './ui/CalendarLayout';
 
 export default CalLayout;
