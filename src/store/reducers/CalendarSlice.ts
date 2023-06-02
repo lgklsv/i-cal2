@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
+  add,
   eachDayOfInterval,
   endOfMonth,
   format,
@@ -33,11 +34,31 @@ const initialState: CalendarState = {
 const CalendarSlice = createSlice({
   name: 'Calendar',
   initialState,
-  reducers: {},
+  reducers: {
+    prevMonth(state) {
+      const firstDayPrevMonth = add(state.firstDayOfMonth, { months: -1 });
+      state.currentMonth = format(firstDayPrevMonth, 'MMM-yyyy');
+      state.firstDayOfMonth = firstDayPrevMonth;
+      state.days = eachDayOfInterval({
+        start: firstDayPrevMonth,
+        end: endOfMonth(firstDayPrevMonth),
+      });
+    },
+
+    nextMonth(state) {
+      const firstDayNextMonth = add(state.firstDayOfMonth, { months: 1 });
+      state.currentMonth = format(firstDayNextMonth, 'MMM-yyyy');
+      state.firstDayOfMonth = firstDayNextMonth;
+      state.days = eachDayOfInterval({
+        start: firstDayNextMonth,
+        end: endOfMonth(firstDayNextMonth),
+      });
+    },
+  },
 });
 
 const { actions, reducer } = CalendarSlice;
 
-// export const { setCalendar, resetCalendar } = actions;
+export const { prevMonth, nextMonth } = actions;
 
 export default reducer;
