@@ -1,11 +1,11 @@
-import Calendar from 'pages/calendar';
+import CalendarPage from 'pages/calendar';
 import { GlobalStyles } from './global.styles';
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <Calendar />
+      <CalendarPage />
     </>
   );
 }

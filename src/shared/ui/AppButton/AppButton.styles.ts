@@ -13,6 +13,7 @@ export const Button = styled.button`
   gap: 0.2rem;
   text-align: center;
   transition: all 0.3s ease;
+  outline: #030303;
 
   &:hover {
     background-color: #eee;
@@ -20,5 +21,7 @@ export const Button = styled.button`
 
   svg {
     fill: #ff3130;
+    scale: 1.5;
+    padding: 2px;
   }
 `;

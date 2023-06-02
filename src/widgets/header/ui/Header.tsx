@@ -1,13 +1,13 @@
-import { BsPlusLg } from 'react-icons/bs';
-import { AppButton, AppLogo } from 'shared/ui';
+import { IoMdAdd } from 'react-icons/io';
 
+import { AppButton, AppLogo } from 'shared/ui';
 import { HeaderContainer } from './HeaderContainer.styles';
 
 function Header() {
   return (
     <HeaderContainer>
       <AppLogo />
-      <AppButton icon={<BsPlusLg />} iconPos="left" />
+      <AppButton icon={<IoMdAdd />} />
     </HeaderContainer>
   );
 }

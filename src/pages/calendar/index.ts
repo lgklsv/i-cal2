@@ -1,3 +1,3 @@
-import Calendar from './ui/Calendar';
+import CalendarPage from './ui/CalendarPage';
 
-export default Calendar;
+export default CalendarPage;
