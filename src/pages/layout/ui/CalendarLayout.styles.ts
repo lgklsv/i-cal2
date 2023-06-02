@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export const CalendarLayout = styled.div`
+export const CalendarLayoutCont = styled.div`
+  position: relative;
   max-width: 740px;
   margin: 0 auto;
   height: 100vh;

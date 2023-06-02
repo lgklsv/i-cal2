@@ -58,11 +58,15 @@ const CalendarSlice = createSlice({
     selectDay(state, action: PayloadAction<Date>) {
       state.selectedDay = action.payload;
     },
+
+    setToday() {
+      return initialState;
+    },
   },
 });
 
 const { actions, reducer } = CalendarSlice;
 
-export const { prevMonth, nextMonth, selectDay } = actions;
+export const { prevMonth, nextMonth, selectDay, setToday } = actions;
 
 export default reducer;

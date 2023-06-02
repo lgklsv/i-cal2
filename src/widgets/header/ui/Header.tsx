@@ -1,7 +1,7 @@
 import { IoMdAdd } from 'react-icons/io';
 
 import { AppButton, AppLogo } from 'shared/ui';
-import { HeaderContainer } from './HeaderContainer.styles';
+import { HeaderContainer } from './Header.styles';
 
 function Header() {
   return (

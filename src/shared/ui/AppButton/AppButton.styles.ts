@@ -16,7 +16,7 @@ export const Button = styled.button`
   outline: #030303;
 
   &:hover {
-    background-color: rgb(229 231 235);
+    background-color: #eee;
   }
 
   svg {
