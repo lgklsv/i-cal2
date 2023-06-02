@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const NormalizeStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -8,6 +8,7 @@ export const NormalizeStyles = createGlobalStyle`
 
   body {
     margin: 0;
+    background-color: #F6F6F6;
   }
 
   main {
