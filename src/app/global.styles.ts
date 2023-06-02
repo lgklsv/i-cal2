@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   * {
     font-family: 'Inter', sans-serif;
+    color: #030303;
   }
 
   html {

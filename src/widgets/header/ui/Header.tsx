@@ -1,5 +1,17 @@
+import { BsPlusLg } from 'react-icons/bs';
+import { AppLogo } from 'shared/ui';
+
+import { HeaderContainer } from './HeaderContainer.styles';
+
 function Header() {
-  return <h1>Header</h1>;
+  return (
+    <HeaderContainer>
+      <AppLogo />
+      <div>
+        <BsPlusLg />
+      </div>
+    </HeaderContainer>
+  );
 }
 
 export default Header;
