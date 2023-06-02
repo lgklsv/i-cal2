@@ -1,5 +1,5 @@
 import { BsPlusLg } from 'react-icons/bs';
-import { AppLogo } from 'shared/ui';
+import { AppButton, AppLogo } from 'shared/ui';
 
 import { HeaderContainer } from './HeaderContainer.styles';
 
@@ -7,9 +7,7 @@ function Header() {
   return (
     <HeaderContainer>
       <AppLogo />
-      <div>
-        <BsPlusLg />
-      </div>
+      <AppButton icon={<BsPlusLg />} iconPos="left" />
     </HeaderContainer>
   );
 }
