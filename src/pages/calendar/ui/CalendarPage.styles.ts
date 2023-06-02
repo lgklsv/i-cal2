@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const CalendarApp = styled.div`
   height: calc(100% - 80px - 70px);
+  display: flex;
+  flex-direction: column;
 `;
 
 export const CalendarContainer = styled.div`

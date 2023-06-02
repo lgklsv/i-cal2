@@ -12,6 +12,7 @@ function CalendarPage() {
           <Weekdays />
           <Calendar.Days />
         </CalendarContainer>
+        <Calendar.Timeline />
       </CalendarApp>
     </CalendarLayout>
   );
