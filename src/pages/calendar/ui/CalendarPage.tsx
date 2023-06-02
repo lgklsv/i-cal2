@@ -9,6 +9,7 @@ function CalendarPage() {
       <Header />
       <Calendar.MonthPicker />
       <Weekdays />
+      <Calendar.Days />
     </CalLayout>
   );
 }
