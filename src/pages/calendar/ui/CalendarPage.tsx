@@ -8,7 +8,7 @@ function CalendarPage() {
     <CalendarLayout>
       <CalendarApp>
         <CalendarContainer>
-          <Calendar.MonthPicker />
+          <Calendar.WeekPicker />
           <Weekdays />
           <Calendar.Days />
         </CalendarContainer>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MonthPickerContainer = styled.div`
+export const WeekPickerContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

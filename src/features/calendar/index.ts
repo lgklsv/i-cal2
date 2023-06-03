@@ -1,9 +1,9 @@
-import { MonthPicker } from './month-picker';
+import { WeekPicker } from './week-picker';
 import { Days } from './days';
 import { Timeline } from './timeline';
 
 export const Calendar = {
-  MonthPicker,
+  WeekPicker,
   Days,
   Timeline,
 };

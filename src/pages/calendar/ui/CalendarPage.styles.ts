@@ -8,7 +8,7 @@ export const CalendarApp = styled.div`
 
 export const CalendarContainer = styled.div`
   background-color: #f6f6f6;
-  height: 430px;
+  padding-bottom: 2rem;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 `;
