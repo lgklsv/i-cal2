@@ -1,31 +1,57 @@
 /* eslint-disable react/no-array-index-key */
-import { weekdays } from 'app/config';
+import { useSelector } from 'react-redux';
+import { isSameDay, isSameHour, parseISO, setHours } from 'date-fns';
+
+import { EventsSelector } from 'store/selectors/EventSelector';
 import { Hour } from 'entities/timeline';
+import { CalendarSelector } from 'store/selectors/CalendarSelector';
 import { timelineHours } from '../model/timelineHours';
 import {
   Table,
   TableCell,
   TableCellContainer,
+  TableCellSelected,
   TableRow,
   TimelineContainer,
 } from './Timeline.styles';
 
 function Timeline() {
-  const extendedTimelineHours = ['0AM'].concat(timelineHours);
+  const { events } = useSelector(EventsSelector);
+  const { days } = useSelector(CalendarSelector);
+  const extendedTimelineHours = [
+    {
+      hour: '',
+      value: NaN,
+    },
+  ].concat(timelineHours);
+
+  const findEvent = (day: Date, hour: number) => {
+    const currentDate = setHours(day, hour);
+    return events.find((event) => {
+      const eventDate = parseISO(event.date);
+      return (
+        isSameDay(eventDate, currentDate) && isSameHour(eventDate, currentDate)
+      );
+    });
+  };
 
   return (
     <TimelineContainer>
       <div>
-        {timelineHours.map((hour, idx) => (
-          <Hour key={idx} hour={hour} />
+        {timelineHours.map((hourObj, idx) => (
+          <Hour key={idx} hour={hourObj.hour} />
         ))}
       </div>
       <Table>
-        {extendedTimelineHours.map((hour, idx) => (
+        {extendedTimelineHours.map((hourObj, idx) => (
           <TableRow key={idx}>
-            {weekdays.map((day, i) => (
+            {days.map((day, i) => (
               <TableCellContainer key={i}>
-                <TableCell />
+                {findEvent(day, hourObj.value) ? (
+                  <TableCellSelected />
+                ) : (
+                  <TableCell />
+                )}
               </TableCellContainer>
             ))}
           </TableRow>

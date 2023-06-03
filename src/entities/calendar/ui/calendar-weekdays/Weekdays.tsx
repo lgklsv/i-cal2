@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
-import { weekdays } from 'app/config';
 import { WeekdaysContainer } from './Weekdays.styles';
+
+const weekdays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 function Weekdays() {
   return (

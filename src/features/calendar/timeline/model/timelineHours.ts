@@ -1,27 +1,102 @@
 export const timelineHours = [
-  '12 AM',
-  '1 AM',
-  '2 AM',
-  '3 AM',
-  '4 AM',
-  '5 AM',
-  '6 AM',
-  '7 AM',
-  '8 AM',
-  '9 AM',
-  '10 AM',
-  '11 AM',
-  'Midday',
-  '1 PM',
-  '2 PM',
-  '3 PM',
-  '4 PM',
-  '5 PM',
-  '6 PM',
-  '7 PM',
-  '8 PM',
-  '9 PM',
-  '10 PM',
-  '11 PM',
-  '12 AM',
+  {
+    hour: '12 AM',
+    value: 0,
+  },
+  {
+    hour: '1 AM',
+    value: 1,
+  },
+  {
+    hour: '2 AM',
+    value: 2,
+  },
+  {
+    hour: '3 AM',
+    value: 3,
+  },
+  {
+    hour: '4 AM',
+    value: 4,
+  },
+  {
+    hour: '5 AM',
+    value: 5,
+  },
+  {
+    hour: '6 AM',
+    value: 6,
+  },
+  {
+    hour: '7 AM',
+    value: 7,
+  },
+  {
+    hour: '8 AM',
+    value: 8,
+  },
+  {
+    hour: '9 AM',
+    value: 9,
+  },
+  {
+    hour: '10 AM',
+    value: 10,
+  },
+  {
+    hour: '11 AM',
+    value: 11,
+  },
+  {
+    hour: 'Midday',
+    value: 12,
+  },
+  {
+    hour: '1 PM',
+    value: 13,
+  },
+  {
+    hour: '2 PM',
+    value: 14,
+  },
+  {
+    hour: '3 PM',
+    value: 15,
+  },
+  {
+    hour: '4 PM',
+    value: 16,
+  },
+  {
+    hour: '5 PM',
+    value: 17,
+  },
+  {
+    hour: '6 PM',
+    value: 18,
+  },
+  {
+    hour: '7 PM',
+    value: 19,
+  },
+  {
+    hour: '8 PM',
+    value: 20,
+  },
+  {
+    hour: '9 PM',
+    value: 21,
+  },
+  {
+    hour: '10 PM',
+    value: 22,
+  },
+  {
+    hour: '11 AM',
+    value: 23,
+  },
+  {
+    hour: '12 AM',
+    value: 0,
+  },
 ];
