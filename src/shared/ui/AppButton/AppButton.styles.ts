@@ -21,7 +21,12 @@ export const Button = styled.button`
 
   svg {
     fill: #ff3130;
+    color: #ff3130;
     scale: 1.5;
     padding: 2px;
+
+    path {
+      color: #ff3130;
+    }
   }
 `;

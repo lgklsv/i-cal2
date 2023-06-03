@@ -10,9 +10,9 @@ function CalendarPage() {
         <CalendarContainer>
           <div />
           <div>
-            <Calendar.WeekPicker />
             <Weekdays />
             <Calendar.Days />
+            <Calendar.WeekPicker />
           </div>
         </CalendarContainer>
         <Calendar.Timeline />
