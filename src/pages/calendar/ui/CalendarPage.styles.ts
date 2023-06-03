@@ -9,6 +9,10 @@ export const CalendarApp = styled.div`
 export const CalendarContainer = styled.div`
   background-color: #f6f6f6;
   padding-bottom: 2rem;
+  padding-left: 0.5rem;
+  display: grid;
+  grid-template-columns: 0.7fr 9fr;
+  gap: 1rem;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 `;

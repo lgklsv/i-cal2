@@ -8,9 +8,12 @@ function CalendarPage() {
     <CalendarLayout>
       <CalendarApp>
         <CalendarContainer>
-          <Calendar.WeekPicker />
-          <Weekdays />
-          <Calendar.Days />
+          <div />
+          <div>
+            <Calendar.WeekPicker />
+            <Weekdays />
+            <Calendar.Days />
+          </div>
         </CalendarContainer>
         <Calendar.Timeline />
       </CalendarApp>
