@@ -2,10 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   add,
   eachDayOfInterval,
-  endOfMonth,
   endOfWeek,
   format,
-  parse,
   startOfToday,
   startOfWeek,
 } from 'date-fns';
@@ -38,23 +36,23 @@ const CalendarSlice = createSlice({
   initialState,
   reducers: {
     prevWeek(state) {
-      // const firstDayPrevMonth = add(state.firstDayOfMonth, { months: -1 });
-      // state.currentMonth = format(firstDayPrevMonth, 'MMM-yyyy');
-      // state.firstDayOfMonth = firstDayPrevMonth;
-      // state.days = eachDayOfInterval({
-      //   start: firstDayPrevMonth,
-      //   end: endOfMonth(firstDayPrevMonth),
-      // });
+      const firstDayPrevWeek = add(state.firstDayOfWeek, { weeks: -1 });
+      state.currentMonth = format(firstDayPrevWeek, 'MMM-yyyy');
+      state.firstDayOfWeek = firstDayPrevWeek;
+      state.days = eachDayOfInterval({
+        start: firstDayPrevWeek,
+        end: endOfWeek(firstDayPrevWeek),
+      });
     },
 
     nextWeek(state) {
-      // const firstDayNextMonth = add(state.firstDayOfMonth, { months: 1 });
-      // state.currentMonth = format(firstDayNextMonth, 'MMM-yyyy');
-      // state.firstDayOfMonth = firstDayNextMonth;
-      // state.days = eachDayOfInterval({
-      //   start: firstDayNextMonth,
-      //   end: endOfMonth(firstDayNextMonth),
-      // });
+      const firstDayNextWeek = add(state.firstDayOfWeek, { weeks: 1 });
+      state.currentMonth = format(firstDayNextWeek, 'MMM-yyyy');
+      state.firstDayOfWeek = firstDayNextWeek;
+      state.days = eachDayOfInterval({
+        start: firstDayNextWeek,
+        end: endOfWeek(firstDayNextWeek),
+      });
     },
 
     selectDay(state, action: PayloadAction<Date>) {
