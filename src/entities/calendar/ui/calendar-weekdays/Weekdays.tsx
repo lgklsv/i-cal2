@@ -1,15 +1,13 @@
+/* eslint-disable react/no-array-index-key */
+import { weekdays } from 'app/config';
 import { WeekdaysContainer } from './Weekdays.styles';
 
 function Weekdays() {
   return (
     <WeekdaysContainer>
-      <div>S</div>
-      <div>M</div>
-      <div>T</div>
-      <div>W</div>
-      <div>T</div>
-      <div>F</div>
-      <div>S</div>
+      {weekdays.map((day, idx) => (
+        <div key={idx}>{day}</div>
+      ))}
     </WeekdaysContainer>
   );
 }

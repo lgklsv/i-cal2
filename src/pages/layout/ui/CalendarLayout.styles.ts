@@ -7,5 +7,6 @@ export const CalendarLayoutCont = styled.div`
   height: 100vh;
   background-color: #fff;
   overflow: hidden;
-  border: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-left: 1px solid #eee;
 `;
