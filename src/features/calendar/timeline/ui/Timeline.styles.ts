@@ -54,6 +54,14 @@ export const TableCell = styled.div`
   }
 `;
 
-export const TableCellSelected = styled(TableCell)`
+export const TableCellWithTask = styled(TableCell)`
   background-color: #ebecff;
+`;
+
+export const TableCellWithTaskSelected = styled(TableCell)`
+  background-color: #b3b7ff;
+
+  &:hover {
+    background-color: #b3b7ff;
+  }
 `;

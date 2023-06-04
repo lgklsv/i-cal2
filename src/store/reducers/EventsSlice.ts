@@ -8,10 +8,12 @@ type Event = {
 
 export type EventsState = {
   events: Event[];
+  selectedEvent: Event | null;
 };
 
 const initialState: EventsState = {
   events: [{ id: '1', text: 'first event', date: '2023-06-04T13:00' }],
+  selectedEvent: null,
 };
 
 const EventsSlice = createSlice({
@@ -21,11 +23,17 @@ const EventsSlice = createSlice({
     createEvent(state, action: PayloadAction<Event>) {
       state.events.push(action.payload);
     },
+    selectEvent(state, action: PayloadAction<Event>) {
+      state.selectedEvent = action.payload;
+    },
+    deleteEvent(state, action: PayloadAction<Event>) {
+      state.events.filter((event) => event.id !== action.payload.id);
+    },
   },
 });
 
 const { actions, reducer } = EventsSlice;
 
-export const { createEvent } = actions;
+export const { createEvent, selectEvent, deleteEvent } = actions;
 
 export default reducer;

@@ -1,22 +1,26 @@
-/* eslint-disable react/no-array-index-key */
-import { useSelector } from 'react-redux';
-import { isSameDay, isSameHour, parseISO, setHours } from 'date-fns';
+/* eslint-disable no-alert */
+import { useDispatch, useSelector } from 'react-redux';
+import { format, isSameDay, isSameHour, parseISO, setHours } from 'date-fns';
+import { v4 as uuidv4 } from 'uuid';
 
 import { EventsSelector } from 'store/selectors/EventSelector';
 import { Hour } from 'entities/timeline';
 import { CalendarSelector } from 'store/selectors/CalendarSelector';
+import { createEvent, selectEvent } from 'store/reducers/EventsSlice';
 import { timelineHours } from '../model/timelineHours';
 import {
   Table,
   TableCell,
   TableCellContainer,
-  TableCellSelected,
+  TableCellWithTask,
+  TableCellWithTaskSelected,
   TableRow,
   TimelineContainer,
 } from './Timeline.styles';
 
 function Timeline() {
-  const { events } = useSelector(EventsSelector);
+  const dispatch = useDispatch();
+  const { events, selectedEvent } = useSelector(EventsSelector);
   const { days } = useSelector(CalendarSelector);
   const extendedTimelineHours = [
     {
@@ -35,22 +39,65 @@ function Timeline() {
     });
   };
 
+  const createEventHandler = (day: Date, hour: number) => {
+    const text = prompt('Enter task text:');
+    if (!text) return;
+    const currentDateStr = setHours(day, hour).toISOString();
+    dispatch(
+      createEvent({
+        id: uuidv4(),
+        text,
+        date: currentDateStr,
+      })
+    );
+  };
+
+  const showEventTextHandler = (day: Date, hour: number) => {
+    const event = findEvent(day, hour);
+    if (event)
+      alert(
+        `${event.text} at ${format(parseISO(event.date), 'haa')} on ${format(
+          parseISO(event.date),
+          'EEEE'
+        )}`
+      );
+  };
+
+  const selectTaskHandler = (day: Date, hour: number) => {
+    const event = findEvent(day, hour);
+
+    if (event) {
+      dispatch(selectEvent(event));
+    }
+  };
+
   return (
     <TimelineContainer>
       <div>
-        {timelineHours.map((hourObj, idx) => (
-          <Hour key={idx} hour={hourObj.hour} />
+        {timelineHours.map((hourObj) => (
+          <Hour key={uuidv4()} hour={hourObj.hour} />
         ))}
       </div>
       <Table>
-        {extendedTimelineHours.map((hourObj, idx) => (
-          <TableRow key={idx}>
-            {days.map((day, i) => (
-              <TableCellContainer key={i}>
-                {findEvent(day, hourObj.value) ? (
-                  <TableCellSelected />
-                ) : (
-                  <TableCell />
+        {extendedTimelineHours.map((hourObj) => (
+          <TableRow key={uuidv4()}>
+            {days.map((day) => (
+              <TableCellContainer key={uuidv4()}>
+                {findEvent(day, hourObj.value) &&
+                  findEvent(day, hourObj.value) !== selectedEvent && (
+                    <TableCellWithTask
+                      onClick={() => selectTaskHandler(day, hourObj.value)}
+                    />
+                  )}
+                {findEvent(day, hourObj.value) === selectedEvent && (
+                  <TableCellWithTaskSelected
+                    onClick={() => showEventTextHandler(day, hourObj.value)}
+                  />
+                )}
+                {!findEvent(day, hourObj.value) && (
+                  <TableCell
+                    onClick={() => createEventHandler(day, hourObj.value)}
+                  />
                 )}
               </TableCellContainer>
             ))}
