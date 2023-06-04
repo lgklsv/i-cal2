@@ -22,6 +22,7 @@ export const HourLine = styled.div`
   width: 100%;
   height: 2px;
   background-color: #ff3130;
+  pointer-events: none;
 `;
 
 export const TableRow = styled.div`
