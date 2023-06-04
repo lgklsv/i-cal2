@@ -16,3 +16,10 @@ export const CalendarContainer = styled.div`
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 `;
+
+export const Placeholder = styled.div`
+  min-width: 51px;
+  @media (max-width: 414px) {
+    min-width: 39px;
+  }
+`;

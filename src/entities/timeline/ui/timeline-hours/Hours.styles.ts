@@ -12,4 +12,8 @@ export const Time = styled.span`
   color: #6b7280;
   justify-self: end;
   font-size: 0.9rem;
+
+  @media (max-width: 414px) {
+    font-size: 0.7rem;
+  }
 `;
