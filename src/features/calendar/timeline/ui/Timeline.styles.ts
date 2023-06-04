@@ -11,8 +11,17 @@ export const TimelineContainer = styled.div`
 `;
 
 export const Table = styled.div`
+  position: relative;
   width: 100%;
   margin-top: -1.6rem;
+`;
+
+export const HourLine = styled.div`
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ff3130;
 `;
 
 export const TableRow = styled.div`
