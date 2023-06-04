@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TableCellContainer = styled.div`
+export const TimelineCellContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,7 @@ export const TableCellContainer = styled.div`
   }
 `;
 
-export const TableCellDefault = styled.div`
+export const TimelineCellDefault = styled.div`
   width: 100%;
   height: 100%;
   &:hover {
@@ -22,11 +22,11 @@ export const TableCellDefault = styled.div`
   }
 `;
 
-export const TableCellWithTask = styled(TableCellDefault)`
+export const TimelineCellWithTask = styled(TimelineCellDefault)`
   background-color: #ebecff;
 `;
 
-export const TableCellWithTaskSelected = styled(TableCellDefault)`
+export const TimelineCellWithTaskSelected = styled(TimelineCellDefault)`
   background-color: #b3b7ff;
 
   &:hover {

@@ -6,7 +6,7 @@ import { CalendarSelector } from 'store/selectors/CalendarSelector';
 import { useCalEvent } from 'shared/hooks/use-cal-event';
 import { timelineHours } from '../model/timelineHours';
 import { Table, TableRow, TimelineContainer } from './Timeline.styles';
-import { TableCell } from './TableCell';
+import { TimelineCell } from './TimelineCell';
 
 function Timeline() {
   const { findEvent } = useCalEvent();
@@ -29,7 +29,7 @@ function Timeline() {
         {extendedTimelineHours.map((hourObj) => (
           <TableRow key={uuidv4()}>
             {days.map((day) => (
-              <TableCell
+              <TimelineCell
                 key={uuidv4()}
                 calEvent={findEvent(day, hourObj.value)}
                 day={day}

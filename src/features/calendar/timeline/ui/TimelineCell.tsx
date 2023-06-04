@@ -5,19 +5,19 @@ import { v4 as uuidv4 } from 'uuid';
 import { EventsSelector } from 'store/selectors/EventSelector';
 import { CalEvent, createEvent, selectEvent } from 'store/reducers/EventsSlice';
 import {
-  TableCellContainer,
-  TableCellDefault,
-  TableCellWithTask,
-  TableCellWithTaskSelected,
-} from './TableCell.styles';
+  TimelineCellContainer,
+  TimelineCellDefault,
+  TimelineCellWithTask,
+  TimelineCellWithTaskSelected,
+} from './TimelineCell.styles';
 
-type TableCellProps = {
+type TimelineCellProps = {
   calEvent: CalEvent | undefined;
   day: Date;
   hour: number;
 };
 
-export function TableCell({ calEvent, day, hour }: TableCellProps) {
+export function TimelineCell({ calEvent, day, hour }: TimelineCellProps) {
   const dispatch = useDispatch();
   const { selectedEvent } = useSelector(EventsSelector);
 
@@ -48,18 +48,18 @@ export function TableCell({ calEvent, day, hour }: TableCellProps) {
   };
 
   return (
-    <TableCellContainer>
+    <TimelineCellContainer>
       {calEvent && calEvent !== selectedEvent && (
-        <TableCellWithTask onClick={() => selectTaskHandler(calEvent)} />
+        <TimelineCellWithTask onClick={() => selectTaskHandler(calEvent)} />
       )}
       {calEvent === selectedEvent && (
-        <TableCellWithTaskSelected
+        <TimelineCellWithTaskSelected
           onClick={() => showEventTextHandler(calEvent)}
         />
       )}
       {!calEvent && (
-        <TableCellDefault onClick={() => createEventHandler(day, hour)} />
+        <TimelineCellDefault onClick={() => createEventHandler(day, hour)} />
       )}
-    </TableCellContainer>
+    </TimelineCellContainer>
   );
 }
