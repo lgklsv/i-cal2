@@ -1,1 +1,1 @@
-export { default as Hour } from './timeline-hour/Hour';
+export { default as Hours } from './timeline-hours/Hours';

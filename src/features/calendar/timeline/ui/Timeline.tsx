@@ -1,11 +1,11 @@
+/* eslint-disable react/no-array-index-key */
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
 import { isEqual, startOfToday } from 'date-fns';
 
-import { Hour } from 'entities/timeline';
 import { CalendarSelector } from 'store/selectors/CalendarSelector';
 import { useCalEvent } from 'shared/hooks/use-cal-event';
+import { Hours } from 'entities/timeline';
 import { timelineHours } from '../model/timelineHours';
 import {
   HourLine,
@@ -48,18 +48,14 @@ function Timeline() {
 
   return (
     <TimelineContainer>
-      <div>
-        {timelineHours.map((hourObj) => (
-          <Hour key={uuidv4()} hour={hourObj.hour} />
-        ))}
-      </div>
+      <Hours timelineHours={timelineHours} />
       <Table>
         <div>
-          {extendedTimelineHours.map((hourObj) => (
-            <TableRow key={uuidv4()}>
-              {days.map((day) => (
+          {extendedTimelineHours.map((hourObj, id) => (
+            <TableRow key={id}>
+              {days.map((day, i) => (
                 <TimelineCell
-                  key={uuidv4()}
+                  key={i}
                   calEvent={findEvent(day, hourObj.value)}
                   day={day}
                   hour={hourObj.value}
