@@ -27,7 +27,10 @@ const EventsSlice = createSlice({
       state.selectedEvent = action.payload;
     },
     deleteEvent(state, action: PayloadAction<CalEvent>) {
-      state.events.filter((event) => event.id !== action.payload.id);
+      state.events = state.events.filter(
+        (event) => event.id !== action.payload.id
+      );
+      state.selectedEvent = null;
     },
   },
 });

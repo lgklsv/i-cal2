@@ -32,6 +32,7 @@ module.exports = {
     'no-param-reassign': 0,
     'prettier/prettier': ['error', { endOfLine: 'auto' }],
     'comma-dangle': ['error', 'only-multiline'],
+    'no-alert': 0,
 
     'jsx-a11y/anchor-has-content': 0,
     'jsx-a11y/control-has-associated-label': 0,
