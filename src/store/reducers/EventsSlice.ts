@@ -1,14 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type Event = {
+export type CalEvent = {
   id: string;
   text: string;
   date: string;
 };
 
 export type EventsState = {
-  events: Event[];
-  selectedEvent: Event | null;
+  events: CalEvent[];
+  selectedEvent: CalEvent | null;
 };
 
 const initialState: EventsState = {
@@ -20,13 +20,13 @@ const EventsSlice = createSlice({
   name: 'events',
   initialState,
   reducers: {
-    createEvent(state, action: PayloadAction<Event>) {
+    createEvent(state, action: PayloadAction<CalEvent>) {
       state.events.push(action.payload);
     },
-    selectEvent(state, action: PayloadAction<Event>) {
+    selectEvent(state, action: PayloadAction<CalEvent>) {
       state.selectedEvent = action.payload;
     },
-    deleteEvent(state, action: PayloadAction<Event>) {
+    deleteEvent(state, action: PayloadAction<CalEvent>) {
       state.events.filter((event) => event.id !== action.payload.id);
     },
   },

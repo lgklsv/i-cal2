@@ -97,6 +97,6 @@ export const timelineHours = [
   },
   {
     hour: '12 AM',
-    value: 0,
+    value: NaN,
   },
 ];
