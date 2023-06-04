@@ -1,4 +1,4 @@
-import { isSameDay, isSameHour, parseISO, setHours } from 'date-fns';
+import { isEqual, isSameDay, isSameHour, parseISO, setHours } from 'date-fns';
 import { useSelector } from 'react-redux';
 
 import { CalEvent } from 'store/reducers/EventsSlice';
@@ -17,5 +17,13 @@ export const useCalEvent = () => {
     });
   };
 
-  return findEvent;
+  const existsEvent = (time: string | undefined): boolean => {
+    if (!time) return false;
+    const isEvent = events.find((event) =>
+      isEqual(parseISO(event.date), parseISO(time))
+    );
+    return Boolean(isEvent);
+  };
+
+  return { findEvent, existsEvent };
 };

@@ -9,7 +9,7 @@ import { Table, TableRow, TimelineContainer } from './Timeline.styles';
 import { TableCell } from './TableCell';
 
 function Timeline() {
-  const findEvent = useCalEvent();
+  const { findEvent } = useCalEvent();
   const { days } = useSelector(CalendarSelector);
   const extendedTimelineHours = [
     {

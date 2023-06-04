@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-globals */
 import { useDispatch, useSelector } from 'react-redux';
 
 import { setToday } from 'store/reducers/CalendarSlice';
