@@ -4,6 +4,9 @@
 
 This project was created as a test task for [Uchi.ru](https://uchi.ru/) trainee position. On this project I tried to satisfy the task requirements as much as possible.
 
+## Deploy
+https://i-cal2.web.app/
+
 ## Key features
 
 - Weekly calendar view
@@ -15,7 +18,7 @@ This project was created as a test task for [Uchi.ru](https://uchi.ru/) trainee 
 
 ## Screenshot
 
-<img width="1552" alt="image" src="https://github.com/lgklsv/graphiql/assets/101424508/cf2ac821-a1f9-4339-8bdf-3f411090f795">
+<img width="612" alt="image" src="https://github.com/lgklsv/i-cal2/assets/101424508/ed8decef-e421-46b1-9601-3e4c9630a936">
 
 ## Tech stack
 
