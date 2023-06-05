@@ -19,7 +19,7 @@ https://i-cal2.web.app/
 
 ## Screenshot
 
-<img width="612" alt="image" src="https://github.com/lgklsv/i-cal2/assets/101424508/ed8decef-e421-46b1-9601-3e4c9630a936">
+<img width="612" alt="image" src="https://github.com/lgklsv/i-cal2/assets/101424508/06576008-f550-4f9d-b155-eade6fc2a928">
 
 ## Tech stack
 
