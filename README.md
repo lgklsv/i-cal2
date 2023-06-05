@@ -1,46 +1,47 @@
-# Getting Started with Create React App
+# iCal2
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[iCal2](https://i-cal2.web.app/) - simple clone of iOS calendar app.
 
-## Available Scripts
+This project was created as a test task for [Uchi.ru](https://uchi.ru/) trainee position. On this project I tried to satisfy the task requirements as much as possible.
 
-In the project directory, you can run:
+## Deploy
 
-### `npm start`
+https://i-cal2.web.app/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Key features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Weekly calendar view
+- Interactive schedule to add some task or event for a certain time slot
+- Create, select, delete an event
+- Default browser prompt, alert, confirm dialogs to match iOS design on iPhone
+- Moving hour line that shows today's time
+- Responsive design (up to 320px)
 
-### `npm test`
+## Screenshot
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img width="612" alt="image" src="https://github.com/lgklsv/i-cal2/assets/101424508/ed8decef-e421-46b1-9601-3e4c9630a936">
 
-### `npm run build`
+## Tech stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Typescript
+- React
+- Styled-components
+- Redux
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How run locally
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
-### `npm run eject`
+```bash
+# Clone this repository
+$ git clone https://github.com/lgklsv/i-cal2.git
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Go into the repository and install dependencies
+$ cd i-cal2
+$ npm install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Start the project
+$ npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# For more commands read package.json
+```
