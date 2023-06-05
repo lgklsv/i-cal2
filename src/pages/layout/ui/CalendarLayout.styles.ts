@@ -5,8 +5,8 @@ export const CalendarLayoutCont = styled.div`
   max-width: 740px;
   margin: 0 auto;
   height: 100vh;
-  background-color: #fff;
+  background-color: ${(props) => props.theme.light.bgPrimary};
   overflow: hidden;
-  border-right: 1px solid #eee;
-  border-left: 1px solid #eee;
+  border-right: 1px solid ${(props) => props.theme.light.border};
+  border-left: 1px solid ${(props) => props.theme.light.border};
 `;

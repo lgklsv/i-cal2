@@ -9,7 +9,7 @@ export const HourContainer = styled.div`
 `;
 
 export const Time = styled.span`
-  color: #6b7280;
+  color: ${(props) => props.theme.light.textSecondary};
   justify-self: end;
   font-size: 0.9rem;
 

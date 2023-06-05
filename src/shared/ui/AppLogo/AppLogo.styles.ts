@@ -5,5 +5,5 @@ export const LogoText = styled.h1`
 `;
 
 export const LogoActiveText = styled.span`
-  color: #ff3130;
+  color: ${(props) => props.theme.light.accentColor};
 `;

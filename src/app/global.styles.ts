@@ -1,9 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
+import { theme } from './config';
 
-export const GlobalStyles = createGlobalStyle`
+type GlobalStylesProps = {
+  theme: typeof theme;
+};
+
+export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   * {
     font-family: 'Inter', sans-serif;
-    color: #030303;
+    color: ${(props) => props.theme.light.textPrimary};
   }
 
   html {
@@ -13,7 +18,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     margin: 0;
-    background-color: #F6F6F6;
+    background-color: ${(props) => props.theme.light.bgSecondary};
   }
 
   main {

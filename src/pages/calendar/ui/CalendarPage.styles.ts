@@ -1,20 +1,21 @@
 import styled from 'styled-components';
 
+// prettier-ignore
 export const CalendarApp = styled.div`
-  height: calc(100% - 80px - 70px);
+  height: calc(100% - ${(props) => props.theme.light.headerHeight} - ${(props) => props.theme.light.footerHeight});
   display: flex;
   flex-direction: column;
 `;
 
 export const CalendarContainer = styled.div`
-  background-color: #f6f6f6;
+  background-color: ${(props) => props.theme.light.bgSecondary};
   padding-top: 0.5rem;
   padding-left: 0.5rem;
   display: grid;
   grid-template-columns: 0.7fr 9fr;
   gap: 1rem;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid ${(props) => props.theme.light.border};
+  border-bottom: 1px solid ${(props) => props.theme.light.border};
 `;
 
 export const Placeholder = styled.div`

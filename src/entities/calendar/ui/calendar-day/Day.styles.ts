@@ -20,36 +20,36 @@ export const DayDefault = styled.button`
   transition: all 0.15s ease;
 
   &:hover {
-    background-color: rgb(229 231 235);
+    background-color: ${(props) => props.theme.light.dayHover};
   }
 `;
 
 export const DayDefaultToday = styled(DayDefault)`
   time {
-    color: #ff3130;
+    color: ${(props) => props.theme.light.accentColor};
   }
 `;
 
 export const DaySelected = styled(DayDefault)`
-  background-color: #030303;
+  background-color: ${(props) => props.theme.light.textPrimary};
 
   time {
-    color: #fff;
+    color: ${(props) => props.theme.light.white};
   }
 
   &:hover {
-    background-color: #030303;
+    background-color: ${(props) => props.theme.light.textPrimary};
   }
 `;
 
 export const DaySelectedToday = styled(DayDefault)`
-  background-color: #ff3130;
+  background-color: ${(props) => props.theme.light.accentColor};
 
   time {
-    color: #fff;
+    color: ${(props) => props.theme.light.white};
   }
 
   &:hover {
-    background-color: #ff3130;
+    background-color: ${(props) => props.theme.light.accentColor};
   }
 `;

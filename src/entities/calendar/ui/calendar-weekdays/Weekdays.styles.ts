@@ -7,6 +7,6 @@ export const WeekdaysContainer = styled.div`
   padding: 1rem 0;
 
   div {
-    color: #6b7280;
+    color: ${(props) => props.theme.light.textSecondary};
   }
 `;

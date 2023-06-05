@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const TimelineContainer = styled.div`
-  background-color: #fff;
+  background-color: ${(props) => props.theme.light.bgPrimary};
   padding-left: 0.5rem;
   overflow-y: scroll;
   flex-shrink: 1000;
@@ -21,14 +21,14 @@ export const HourLine = styled.div`
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #ff3130;
+  background-color: ${(props) => props.theme.light.accentColor};
   pointer-events: none;
 `;
 
 export const TableRow = styled.div`
   height: 50px;
   display: grid;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid ${(props) => props.theme.light.border};
   grid-template-columns: repeat(7, 1fr);
 
   &:first-child {
