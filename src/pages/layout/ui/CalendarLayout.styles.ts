@@ -4,7 +4,7 @@ export const CalendarLayoutCont = styled.div`
   position: relative;
   max-width: 740px;
   margin: 0 auto;
-  height: 100vh;
+  height: 100dvh;
   min-height: -webkit-fill-available;
   background-color: ${(props) => props.theme.light.bgPrimary};
   overflow: hidden;
