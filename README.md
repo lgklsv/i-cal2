@@ -13,6 +13,7 @@ https://i-cal2.web.app/
 - Weekly calendar view
 - Interactive schedule to add some task or event for a certain time slot
 - Create, select, delete an event
+- All added events are saved to local storage
 - Default browser prompt, alert, confirm dialogs to match iOS design on iPhone
 - Moving hour line that shows today's time
 - Responsive design (up to 320px)
