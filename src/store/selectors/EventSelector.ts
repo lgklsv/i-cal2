@@ -1,1 +1,1 @@
-export const EventsSelector = (state: RootState) => state.events;
+export const EventsSelector = (state: RootState) => state.eventsReducer;

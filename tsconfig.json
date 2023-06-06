@@ -18,5 +18,10 @@
     "noImplicitAny": true,
     "jsx": "react-jsx"
   },
-  "include": [".eslintrc.cjs", "src", "./setupTest.ts"]
+  "include": [
+    ".eslintrc.cjs",
+    "src",
+    "./setupTest.ts",
+    "./node_modules/redux-persist/types"
+  ]
 }

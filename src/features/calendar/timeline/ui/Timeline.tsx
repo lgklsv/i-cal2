@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { isEqual, startOfToday } from 'date-fns';
 
-import { CalendarSelector } from 'store/selectors/CalendarSelector';
+import { daysSelector } from 'store/selectors/CalendarSelector';
 import { useCalEvent } from 'shared/hooks/use-cal-event';
 import { Hours } from 'entities/timeline';
 import { timelineHours } from '../model/timelineHours';
@@ -20,7 +20,7 @@ const CELL_HEIGHT = 51;
 function Timeline() {
   const [curTime, setCurTime] = useState(new Date(Date.now()));
   const { findEvent } = useCalEvent();
-  const { days } = useSelector(CalendarSelector);
+  const { days } = useSelector(daysSelector);
   const isCurDayOnPage = days.find((day) => isEqual(day, startOfToday()));
   const extendedTimelineHours = [
     {

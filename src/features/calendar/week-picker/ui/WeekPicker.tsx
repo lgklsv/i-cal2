@@ -3,13 +3,13 @@ import { IoChevronForwardOutline, IoChevronBackOutline } from 'react-icons/io5';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { AppButton } from 'shared/ui';
-import { CalendarSelector } from 'store/selectors/CalendarSelector';
+import { weekSelector } from 'store/selectors/CalendarSelector';
 import { nextWeek, prevWeek } from 'store/reducers/CalendarSlice';
 import { WeekPickerContainer, YearText } from './WeekPicker.styles';
 
 function WeekPicker() {
   const dispatch = useDispatch();
-  const { firstDayOfWeek } = useSelector(CalendarSelector);
+  const { firstDayOfWeek } = useSelector(weekSelector);
 
   const prevWeekHandler = () => {
     dispatch(prevWeek());
