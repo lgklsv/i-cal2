@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { format, isEqual, isToday } from 'date-fns';
 
-import { CalendarSelector } from 'store/selectors/CalendarSelector';
+import { daysSelector } from 'store/selectors/CalendarSelector';
 import { selectDay } from 'store/reducers/CalendarSlice';
 import { Day } from 'entities/calendar';
 import { DaysContainer } from './Days.styles';
 
 function Days() {
   const dispatch = useDispatch();
-  const { days, selectedDay } = useSelector(CalendarSelector);
+  const { days, selectedDay } = useSelector(daysSelector);
 
   const selectDayHandler = (day: Date) => {
     dispatch(selectDay(day));

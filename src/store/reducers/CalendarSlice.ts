@@ -1,34 +1,32 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import {
   add,
-  eachDayOfInterval,
   endOfWeek,
   format,
+  parseISO,
   startOfToday,
   startOfWeek,
 } from 'date-fns';
+import { getDaysInterval } from 'shared/lib/date';
 
 export type CalendarState = {
   today: Date;
-  selectedDay: Date;
+  selectedDay: string;
   currentMonth: string;
-  firstDayOfWeek: Date;
-  days: Date[];
+  firstDayOfWeek: string;
+  days: string[];
 };
 
 const today = startOfToday();
 const currentMonth = format(today, 'MMM-yyyy');
-const firstDayOfWeek = startOfWeek(today);
+const firstDayOfWeek = startOfWeek(today).toISOString();
 
 const initialState: CalendarState = {
   today,
-  selectedDay: today,
+  selectedDay: today.toISOString(),
   currentMonth,
   firstDayOfWeek,
-  days: eachDayOfInterval({
-    start: firstDayOfWeek,
-    end: endOfWeek(today),
-  }),
+  days: getDaysInterval(parseISO(firstDayOfWeek), endOfWeek(today)),
 };
 
 const CalendarSlice = createSlice({
@@ -36,27 +34,31 @@ const CalendarSlice = createSlice({
   initialState,
   reducers: {
     prevWeek(state) {
-      const firstDayPrevWeek = add(state.firstDayOfWeek, { weeks: -1 });
-      state.currentMonth = format(firstDayPrevWeek, 'MMM-yyyy');
-      state.firstDayOfWeek = firstDayPrevWeek;
-      state.days = eachDayOfInterval({
-        start: firstDayPrevWeek,
-        end: endOfWeek(firstDayPrevWeek),
+      const firstDayPrevWeek = add(parseISO(state.firstDayOfWeek), {
+        weeks: -1,
       });
+      state.currentMonth = format(firstDayPrevWeek, 'MMM-yyyy');
+      state.firstDayOfWeek = firstDayPrevWeek.toISOString();
+      state.days = getDaysInterval(
+        firstDayPrevWeek,
+        endOfWeek(firstDayPrevWeek)
+      );
     },
 
     nextWeek(state) {
-      const firstDayNextWeek = add(state.firstDayOfWeek, { weeks: 1 });
-      state.currentMonth = format(firstDayNextWeek, 'MMM-yyyy');
-      state.firstDayOfWeek = firstDayNextWeek;
-      state.days = eachDayOfInterval({
-        start: firstDayNextWeek,
-        end: endOfWeek(firstDayNextWeek),
+      const firstDayNextWeek = add(parseISO(state.firstDayOfWeek), {
+        weeks: 1,
       });
+      state.currentMonth = format(firstDayNextWeek, 'MMM-yyyy');
+      state.firstDayOfWeek = firstDayNextWeek.toISOString();
+      state.days = getDaysInterval(
+        firstDayNextWeek,
+        endOfWeek(firstDayNextWeek)
+      );
     },
 
     selectDay(state, action: PayloadAction<Date>) {
-      state.selectedDay = action.payload;
+      state.selectedDay = action.payload.toISOString();
     },
 
     setToday() {
