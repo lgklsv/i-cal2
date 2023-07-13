@@ -2,8 +2,6 @@
 
 [iCal2](https://i-cal2.web.app/) - simple clone of iOS calendar app.
 
-This project was created as a test task for [Uchi.ru](https://uchi.ru/) trainee position. On this project I tried to satisfy the task requirements as much as possible.
-
 ## Deploy
 
 https://i-cal2.web.app/
